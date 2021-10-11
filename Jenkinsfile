@@ -20,8 +20,8 @@ pipeline {
                     remote.password = "${env.PSW}"
                     remote.allowAnyHosts = true
                 }
-                writeFile file:  
-                sshPut remote: remote, from: 'README.md', into: '/tmp/README.md'                  
+                writeFile file: 'abc.sh', text: 'ls -lrt'
+                sshPut remote: remote, from: 'abc.sh', into: '.'                      
 	        }
 
 	    }
